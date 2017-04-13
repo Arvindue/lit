@@ -1,0 +1,108 @@
+    <div class="container">
+          <div class="row">
+              <div class="">
+                  <h3>Add Content Manager</h3>
+              </div>
+              <div class="panel panel-default">
+                  <div class="panel-body">
+                      <form class="form-horizontal" name="adduserform" novalidate>
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="name">Name :</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" id="name" ng-model="manager.name" name="name" ng-pattern="/^(\D)+$/" required >
+                                  <p ng-show="adduserform.name.$error.pattern">Only TEXT allowed!</p>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="mobile">Mobile :</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" id="mobile" ng-model="manager.mobile" name="mobile" placeholder="91-8088855645" ng-pattern="/^\+?\d{2}[- ]?\d{10}$/" required >
+                                  <p ng-show="adduserform.mobile.$error.pattern">Please enter the number in the following format only:"91-8088855645"</p>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="emailid">Email ID :</label>
+                              <div class="col-sm-7">
+                                  <input type="email" class="form-control" id="emailid" ng-model="manager.emailid" name="emailid" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" required  >
+                                  <p ng-show="adduserform.emailid.$error.pattern">Please Enter Your Email ID in the following format only:"xyz@gmail.com" </p>
+                              </div>
+                          </div>
+                    
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="country">Country :</label>
+                              <div class="col-sm-7">
+                              <select class="form-control" id="country" name="country" ng-model="manager.country" required>
+                                <option>India</option>
+                                <option>Afghanistan</option>
+                                <option>Pakistan</option>
+                                <option>Bangladesh</option>
+                                <option>Indonesia</option>
+                                <option>Oman</option>
+                                <option>Saudi Arabia</option>
+                              </select>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="state">State :</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" id="state" ng-model="state" name="state" ng-pattern="/^(\D)+$/" required >
+                                  <p ng-show="adduserform.state.$error.pattern">Only TEXT allowed!</p>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="city">City :</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" id="city" name="city" ng-model="manager.city" ng-pattern="/^(\D)+$/"  required>
+                                  <p ng-show="adduserform.city.$error.pattern">Only TEXT allowed!</p>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="userrole">User Role :</label>
+                              <div class="col-sm-7">
+                              <select class="form-control" id="userrole" name="userrole" ng-model="manager.userrole" required>
+                                
+                                <option>Mufti Saheb</option>
+                                <option>Content Manager</option>
+                              </select>
+                              </div>
+                          </div>
+                    
+                         <div class="form-group">
+                             <label class="control-label col-sm-2" for="answer">Short Introduction :</label>
+                             <div class="col-md-7">
+                                 <textarea class="form-control" rows="5" id="answer" ng-model="manager.answer" name="answer"></textarea>                                </div>
+                         </div>   
+                     
+                          <div class="col-sm-offset-2">
+                              <button type="submit" class="btn btn-primary" name="submit" style="margin-left: 5px;"  ng-disabled="!adduserform.$valid" ng-click="update(manager)" data-toggle="modal" data-target=".bs-example-modal-sm">SUBMIT</button>
+                          </div>
+                          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Notification</h4>
+                      </div>
+                      <div class="alert alert-success" role="alert">
+                      <div class="modal-body">
+                        <p>You Have Sucessfully Submitted Your Data!!!</p>
+                      </div></div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                      </form>
+                      <pre>form = {{manager | json}}</pre>
+                      <pre>master = {{master | json}}</pre>
+                  </div>
+              </div>
+          </div>
+      </div>
+     

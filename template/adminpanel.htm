@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="">
+            <h3>Admin Panel</h3>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-horizontal"   name="adminpanelform" novalidate >
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="categoryName">Category Name :</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="categoryName" ng-model="category.categoryName" name="categoryName" ng-pattern="/^(\D)+$/" required >
+                            <p ng-show="adminpanelform.categoryName.$error.pattern">Only TEXT allowed!</p>
+							</div>
+                    </div>
+                          
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="uploadType">Upload Type :</label>
+                            <div class="col-sm-7">
+                              <select class="form-control"  id="uploadType" ng-model="category.uploadType" name="uploadType" required >
+                                <option value="file">File</option>
+                                <option value="url">URL</option>
+								<option value="none">None</option>
+                              </select>
+                            </div>
+                    </div>
+					<!--chech box-->
+		
+		<div class="form-group">
+        <label class="control-label col-sm-2" for="articlelanguage">Uploade Attribute:</label>
+		<div class="col-md-7">
+		<ul ng-repeat=" category in categories">
+		<li class="thumbnail">
+		<div class="row text-center">
+		<input type="checkbox" value="{{ category }}" ng-model="newObject[category]" ng-disabled="newObject[categories[0]] && category != categories[0]">
+     {{ category }} 
+		
+		<!--<div>
+		
+       <label for="default"  class="btn btn-default"> Title <input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+		<label for="default" class="btn btn-default"> Url    <input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+		<label for="default" class="btn btn-default"> Language <input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+		<label for="default" class="btn btn-default"> Writer<input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+		<label for="default" class="btn btn-default"> Speaker<input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+		<label for="default" class="btn btn-default"> Coverurl<input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+		<label for="default" class="btn btn-default"> Description<input type="checkbox" id="default" class="badgebox"><span class="badge">&check;</span></label>
+		</div>-->
+		</div>
+		
+		</li>
+		</ul>
+		</div>
+		</div>
+		<br>
+					<!--End chech box-->
+                     <!--button code-->
+                    <div class="col-sm-offset-2">
+                              <button type="submit" class="btn btn-primary" name="submit" style="margin-left: 5px;" ng-click="update(category)" data-toggle="modal" data-target=".bs-example-modal-sm" ng-disabled="!adminpanelform.$valid" >SUBMIT</button>
+                          </div>
+						     <!-- success ful notification code-->
+							 
+							 
+							 
+							 
+							 
+							 
+							 
+							 
+							 
+							 
+                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Notification</h4>
+                      </div>
+                      <div class="alert alert-success" role="alert">
+                      <div class="modal-body">
+                        <p>You Have Sucessfully Submitted Your Data!!!</p>
+                      </div></div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>

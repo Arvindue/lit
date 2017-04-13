@@ -1,0 +1,98 @@
+
+      <div class="container-fluid">
+          <div class="row" >
+            <div class="col-md-*">
+                <div class="navbar navbar-inverse navbar-static-top">
+                    <div class="container-fluid">
+                        
+                      <button class="navbar-toggle" data-toggle="collapse" data-target =".navHeaderCollapse">
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                      <div class="collapse navbar-collapse navHeaderCollapse" >
+                          <ul class="nav navbar-nav navbar-right">
+                              <li><a ui-sref ="home.mainHome">HOME</a></li>
+							    <li><a ui-sref ="home.Adminpanel">ADMIN PANEL</a></li>
+                              <li class="dropdown">
+                                  <a href = "#" class="dropdown-toggle" data-toggle="dropdown">ARTICLE<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ><a ui-sref="home.addArticle">Add Article</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li ><a ui-sref="home.updateArticle">Update Article</a></li>
+                                    </ul>
+                              </li>
+                              
+                              <li class="dropdown">
+                                    <a href = "#" class="dropdown-toggle" data-toggle="dropdown">AUDIO<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ><a ui-sref="home.addAudio">Add Audio</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li ><a ui-sref="home.updateAudio">Update Audio</a></li>
+                                    </ul>
+                              </li>
+                              
+                              <li class="dropdown">
+                                    <a href = "#" class="dropdown-toggle" data-toggle="dropdown">BOOK<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ><a ui-sref="home.addBook">Add Book</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li ><a ui-sref="home.updateBook">Update Book</a></li>
+                                    </ul>
+                              </li>
+                              
+                              <li class="dropdown">
+                                    <a href = "#" class="dropdown-toggle" data-toggle="dropdown">EVENT<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ><a ui-sref="home.addEvent">Add Event</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li ><a ui-sref="home.updateEvent">Update Event</a></li>
+                                    </ul>
+                              </li>
+                              
+                              <li><a ui-sref="home.addSlide">FLASH SLIDES</a></li>
+                              
+                              <li class="dropdown">
+                                    <a href = "#" class="dropdown-toggle" data-toggle="dropdown">JOB<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ><a ui-sref="home.addJob">Add Job</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li ><a ui-sref="home.updateJob">Update Job</a></li>
+                                    </ul>
+                              </li>
+                                
+                              <li><a ui-sref="#">NEWS & UPDATES</a></li>  
+                              
+                              <li class="dropdown">
+                                    <a href = "#" class="dropdown-toggle" data-toggle="dropdown">PERSONALITY<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ><a ui-sref="home.addPersonality">Add Personality</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li ><a ui-sref="home.updatePersonality">Update Personality</a></li>
+                                    </ul>
+                              </li>
+                              
+                              <li><a ui-sref="home.subscribe">SUBSCRIBE</a></li>
+                              
+                              <li class="dropdown">
+                                    <a href = "#" class="dropdown-toggle" data-toggle="dropdown">VIDEO<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li ><a ui-sref="home.addVideo">Add Video</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li ><a ui-sref="home.updateVideo">Update Video</a></li>
+                                    </ul>
+                              </li>
+                              
+                              <li><a ui-sref="home.addUser">ADD USER</a></li>
+                              
+                              <li><a ui-sref="#">LOGOUT</a></li>
+                                
+                        </ul>
+                      </div>
+                </div>
+                </div>
+          </div>
+          </div>
+      </div>
+   
+<ui-view></ui-view>

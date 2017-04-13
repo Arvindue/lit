@@ -1,0 +1,95 @@
+
+      <div class="container">
+          <div class="row">
+              <div class="">
+                  <h3>Add New Video</h3>
+              </div>
+              <div class="panel panel-default">
+                  <div class="panel-body">
+                      <form class="form-horizontal" name="addvideoform" novalidate>
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="videotitle">Video Titlee :</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" id="videotitle" name="videotitle" ng-model="video.videotitle" ng-pattern="/^(\D)+$/" required>
+                                  <p ng-show="addvideoform.videotitle.$error.pattern">Only TEXT allowed!</p>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="speechby">Speech By :</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" id="speechby" name="speechby" ng-model="video.speechby" ng-pattern="/^(\D)+$/" required>
+                                  <p ng-show="addvideoform.speechby.$error.pattern">Only TEXT allowed!</p>
+                              </div>
+                          </div>
+                    
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="category">Category :</label>
+                              <div class="col-sm-7">
+                              <select class="form-control" id="category" name="category" ng-model="video.category" required>
+                                <option>Select Category</option>
+                                <option>Science fiction</option>
+                                <option>Satire</option>
+                                <option>Drama</option>
+                                <option>Romance</option>
+                                <option>Mystery</option>
+                                <option>Horror</option>
+                              </select>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="date">Created Date :</label>
+                              <div class="col-sm-2">
+                                  <input type="date" class="form-control" id="date1" name="date1" required>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="videocover">Upload Video Cover :</label>
+                              <div class="col-sm-3">
+                                  <input type="file" class="form-control" id="videocover" name="videocover" required>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="videolink">Video Link :</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" id="videolink" name="videolink" required>
+                              </div>
+                          </div>
+                          
+                          <div class="form-group">
+                              <label class="control-label col-sm-2" for="description">Description :</label>
+                              <div class="col-md-7">
+                                 <textarea class="form-control" rows="5" id="description" name="description" ng-model="video.description"></textarea>                                 </div>
+                          </div>   
+                     
+                          <div class="col-sm-offset-2">
+                              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" name="submit" style="margin-left: 5px;" ng-click="update(video)" ng-disabled="!addvideoform.$valid" >SUBMIT</button>
+                          </div>
+                          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Notification</h4>
+                      </div>
+                      <div class="alert alert-success" role="alert">
+                      <div class="modal-body">
+                        <p>You Have Sucessfully Submitted Your Data!!!</p>
+                      </div></div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                      </form>
+                      <pre>form = {{video | json}}</pre>
+                      <pre>master = {{master | json}}</pre>
+                  </div>
+              </div>
+          </div>
+      </div>
+      

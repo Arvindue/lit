@@ -1,0 +1,9 @@
+.dropdown-menu {
+	z-index: 10000!important;
+}
+.custom-hr{
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+    border: 0;
+    border-top: 1px solid #eee!important;
+}

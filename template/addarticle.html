@@ -1,0 +1,108 @@
+<div class="container">
+    <div class="row">
+        <div class="">
+            <h3>Add New Article</h3>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-horizontal" name="addarticleform" novalidate >
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="articletitle">Article Title :</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="articletitle" ng-model="article.articletitle" name="articletitle" ng-pattern="/^(\D)+$/" required>
+                                <p ng-show="addarticleform.articletitle.$error.pattern">Only TEXT allowed!</p>
+                            </div>
+                    </div>
+                          
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="articlelanguage">Article Language :</label>
+                            <div class="col-sm-7">
+                              <select class="form-control" id="articlelanguage" ng-model="article.articlelanguage" name="articlelanguage" required>
+                            
+                                <option>Hindi</option>
+                                <option>English</option>
+                                <option>Urdu</option>
+                              </select>
+                            </div>
+                    </div>
+                          
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Writtenby">Written By :</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="writtenby" ng-model="article.writtenby" name="writtenby" ng-pattern="/^(\D)+$/" required>
+                                <p ng-show="addarticleform.writtenby.$error.pattern">Only TEXT allowed!</p>
+                            </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="category">Category :</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="category" ng-model="article.category" name="category" required>
+                                    
+                                    <option>Science fiction</option>
+                                    <option>Satire</option>
+                                    <option>Drama</option>
+                                    <option>Romance</option>
+                                    <option>Mystery</option>
+                                    <option>Horror</option>
+                                </select>
+                            </div>
+                    </div>
+                         
+                          
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="date">Created Date :</label>
+                            <div class="col-sm-2">
+                                <input type="date" class="form-control" id="date" ng-model="article.date" name="date" required>
+                            </div>
+                    </div>
+                          
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="description">Description :</label>
+                            <div class="col-md-7">
+                                <textarea class="form-control" rows="5" id="description" ng-model="article.description" name="description"></textarea>   
+                            </div>
+                    </div>   
+                     
+                    <div class="col-sm-offset-2">
+                              <button type="submit" class="btn btn-primary" name="submit" style="margin-left: 5px;" ng-click="update(article)" data-toggle="modal" data-target=".bs-example-modal-sm" ng-disabled="!addarticleform.$valid" >SUBMIT</button>
+                          </div>
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+						  
+                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Notification</h4>
+                      </div>
+                      <div class="alert alert-success" role="alert">
+                      <div class="modal-body">
+                        <p>You Have Sucessfully Submitted Your Data!!!</p>
+                      </div></div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </form>
+                <pre>form = {{article | json}}</pre>
+                      <pre>master = {{master | json}}</pre>
+            </div>
+        </div>
+    </div>
+</div>
+     

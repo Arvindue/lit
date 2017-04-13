@@ -1,0 +1,153 @@
+
+    <div class="container">
+    <div class="row">
+        <div class="">
+            <h3>Add New Book</h3>
+        </div>
+                <div class="panel panel-default">
+                <div class="panel-body">
+                <form class="form-horizontal" name="addbookform" novalidate>
+                   
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="booktitle">Book Title :</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="booktitle" name="booktitle" ng-model="book.booktitle" ng-pattern="/^(\D)+$/" required>
+                          <p ng-show="addbookform.booktitle.$error.pattern">Only TEXT allowed!</p>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="bookwriter">Book Writer :</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="bookwriter" name="bookwriter" ng-model="book.bookwriter" ng-pattern="/^(\D)+$/" required>
+                          <p ng-show="addbookform.bookwriter.$error.pattern">Only TEXT allowed!</p>
+                      </div>
+                    </div>
+                    
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="publisher">Published By :</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" id="publisher" name="publisher" ng-model="book.publisher" ng-pattern="/^(\D)+$/" required>
+                          <p ng-show="addbookform.publisher.$error.pattern">Only TEXT allowed!</p>
+                      </div>
+                    </div>
+                    
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="category">Category :</label>
+                      <div class="col-sm-7">
+                              <select class="form-control" id="category" name="category" ng-model="book.category" required>
+                                
+                                <option>Science fiction</option>
+                                <option>Satire</option>
+                                <option>Drama</option>
+                                <option>Romance</option>
+                                <option>Mystery</option>
+                                <option>Horror</option>
+                              </select>
+                      </div>
+                     </div>
+                    
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="pages">Pages and Size  :</label>
+                      <div class="col-sm-2">
+                        <input type="text" class="form-control" id="pages" name="pages" placeholder="eg: 100 pages | 5 MB" ng-model="book.pages" ng-pattern="/^\+?\d{1,5}[| ]?\d{1,6}$/" required>
+                          <p ng-show="addbookform.pages.$error.pattern">FORMAT : eg: 100|5 </p>
+                      </div>
+                     </div>
+                    
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="date">Created Date :</label>
+                      <div class="col-sm-8">
+                          <div class="col-sm-3" style="padding-left: 1px;">
+                              <input type="date" class="form-control" id="date1" name="createddate"required>
+                          </div>
+                           
+                      </div>
+                     </div>
+                    
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="image">Urdu Book Cover :</label>
+                      <div class="col-sm-8">
+                          <div class="col-sm-4" style="padding-left: 1px;">
+                              <input type="file" class="form-control" id="urduimage" name="urdubookimage" required>
+                          </div>
+                           <div class="col-sm-6">
+                                <div class="col-sm-3">
+                                    <label class="control-label" for="pdf">PDF :</label>
+                                </div>
+                                <div class="col-sm-8" style="padding-left:0px; padding-right: 1px;">
+                                    <input type="file" class="form-control" id="urdupdf" name="urdupdf" required>
+                                </div>
+                        </div>
+                      </div>
+                     </div>
+                    
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="image">English Book Cover :</label>
+                      <div class="col-sm-8">
+                          <div class="col-sm-4" style="padding-left: 1px;">
+                              <input type="file" class="form-control" id="englishimage" name="englishimage" required>
+                          </div>
+                           <div class="col-sm-6">
+                                <div class="col-sm-3">
+                                    <label class="control-label" for="pdf">PDF :</label>
+                                </div>
+                                <div class="col-sm-8" style="padding-left:0px; padding-right: 1px;">
+                                    <input type="file" class="form-control" id="englishpdf" name="englishpdf" required>
+                                </div>
+                        </div>
+                      </div>
+                     </div>
+                    
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="image">Hindi Book Cover :</label>
+                      <div class="col-sm-8">
+                          <div class="col-sm-4" style="padding-left: 1px;">
+                              <input type="file" class="form-control" id="hindiimage" name="hindibookimage" required>
+                          </div>
+                           <div class="col-sm-6">
+                                <div class="col-sm-3">
+                                    <label class="control-label" for="pdf">PDF :</label>
+                                </div>
+                                <div class="col-sm-8" style="padding-left:0px; padding-right: 1px;">
+                                    <input type="file" class="form-control" id="hindipdf" name="hindipdf" required>
+                                </div>
+                        </div>
+                      </div>
+                     </div>
+                    
+                     <div class="form-group">
+                      <label class="control-label col-sm-2" for="description">Description :</label>
+                        <div class="col-md-7">
+                      <textarea class="form-control" rows="5" id="description" name="description" ng-model="book.description" required></textarea>
+                        </div>
+                     </div>   
+                     
+                    <div class="col-sm-offset-2">
+                              <button type="submit" class="btn btn-primary" name="submit" style="margin-left: 5px;" ng-click="update(book)" data-toggle="modal" data-target=".bs-example-modal-sm"> <!--ng-disabled="!addbookform.$valid"--> SUBMIT</button>
+                          </div>
+                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                  <div class="modal-dialog modal-sm" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Notification</h4>
+                      </div>
+                      <div class="alert alert-success" role="alert">
+                      <div class="modal-body">
+                        <p>You Have Sucessfully Submitted Your Data!!!</p>
+                      </div></div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    </form>
+                    <pre>form = {{book | json}}</pre>
+                    <pre>master = {{master | json}}</pre>
+                    </div>
+        </div>
+        </div>
+      </div>
+        

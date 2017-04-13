@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Literature</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+     
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.22.4/jquery.min.js"></script>-->
+      <script
+  src="https://code.jquery.com/jquery-3.2.0.min.js"
+  integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I="
+  crossorigin="anonymous"></script>
+      
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  </head>
+  <body ng-app="literature">
+      
+    <div ui-view="nav"></div>
+          <ui-view></ui-view>
+    <div ui-view="footer"></div>
+      
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="app.js" ></script>
+    <script src="controller/subscriberCtrl.js"></script>
+    <script src="controller/addarticleCtrl.js"></script>
+    <script src="controller/addaudioCtrl.js"></script>
+    <script src="controller/addbookCtrl.js"></script>
+    <script src="controller/addeventCtrl.js"></script>
+    <script src="controller/addflashslideCtrl.js"></script>
+    <script src="controller/addjobCtrl.js"></script>
+    <script src="controller/addpersonalityCtrl.js"></script>
+    <script src="controller/addvideoCtrl.js"></script>
+    <script src="controller/adduserCtrl.js"></script>
+	<script src="controller/adminpanelCtrl.js"></script>
+  </body>
+</html>
